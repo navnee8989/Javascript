@@ -1,0 +1,161 @@
+1.What is JavaScript?
+
+-->JavaScript is a lightweight programming language that web developers commonly use to create more dynamic interactions when developing web pages, applications, servers, and or even games.
+
+Developers generally use JavaScript alongside HTML and CSS The scripting language works well with CSS in formatting HTML elements. However, JavaScript still maintains user interaction, something that CSS cannot do by itself.
+
+2.What is the use of isNaN function?
+
+-->The JavaScript isNaN() Function is used to check whether a given value is an illegal number or not. It returns true if the value is a NaN else returns false. It is different from the Number. isNaN() Method
+
+3.What is negative Infinity?
+
+-->NEGATIVE_INFINITY is a special numeric value that is returned when an arithmetic operation or mathematical function generates a negative value greater than the largest representable number in JavaScript (i.e., more negative than -Number. MAX_VALUE) . JavaScript displays the NEGATIVE_INFINITY value as -Infinity 
+
+4.Which company developed JavaScript?
+
+-->JavaScript was invented by Brendan Eich in 1995. It was developed for Netscape 2, and became the ECMA-262 standard in 1997. After Netscape handed JavaScript over to ECMA, the Mozilla foundation continued to develop JavaScript for the Firefox browser. Mozilla's latest version was 1.8.5.
+
+5.What are undeclared and undefined variables?
+
+-->Undefined: It occurs when a variable has been declared but has not been assigned any value. Undefined is not a keyword. 
+
+Undeclared: It occurs when we try to access any variable that is not initialized or declared earlier using the var or const keyword. If we use ‘typeof’ operator to get the value of an undeclared variable, we will face the runtime error with the return value as “undefined”. The scope of the undeclared variables is always global. 
+
+6.Write the code for adding new elements dynamically?
+
+-->Syntax: document. createElement("<tagName>"); // Where <tagName> can be any HTML // tagName like div, ul, button, etc. // newDiv element has been created For Eg: let newDiv = document. createElement("div");
+
+7.What is the difference between ViewState and SessionState?
+
+-->The basic difference between these two is that the ViewState is to manage state at the client's end, making state management easy for end-user while SessionState manages state at the server's end, making it easy to manage content from this end too.
+
+
+8.What is === operator?
+
+-->The strict equality ( === ) operator checks whether its two operands are equal, returning a Boolean result. Unlike the equality operator, ...
+
+
+9.How can the style/class of an element be changed?
+
+-->Element Class Names
+Another way to alter the style of an element is by changing its class attribute. class is a reserved word in JavaScript, so in order to access the element's class, you use element. className .
+
+10.How to read and write a file using JavaScript?
+
+-->On the client side, you can’t read or write files in JavaScript browsers. The fs module in Node.js may be used to accomplish this on the server-side. It has methods for reading and writing files on the file system that are both synchronous and asynchronous. Let’s demonstrate some examples of reading and writing files with the node.js fs module.
+
+The fs.readFile() and rs.writeFile() methods are used to read and write of a file using javascript. The file is read using the fs.readFile() function, which is an inbuilt method. This technique reads the full file into memory and stores it in a buffer. 
+
+Syntax:
+
+fs.readFile( file_name, encoding, callback_function )
+
+
+11.What are all the looping structures in JavaScript?
+
+-->JavaScript supports different kinds of loops:
+
+    for - loops through a block of code a number of times.
+    for/in - loops through the properties of an object.
+    for/of - loops through the values of an iterable object.
+    while - loops through a block of code while a specified condition is true
+
+
+12.How can you convert the string of any base to an integer in JavaScript?
+
+-->In JavaScript parseInt() function (or a method) is used to convert the passed-in string parameter or value to an integer value itself. This function returns an integer of the base which is specified in the second argument of the parseInt() function.
+
+13.What is the function of the delete operator?
+
+-->The delete operator removes a property from an object. If the property's value is an object and there are no more references to the object, the object held by that property is eventually released automatically.
+
+syntex:-
+		delete object.property
+		delete object[property]
+
+example:-
+
+// Creates the property empCount on the global scope.
+// Since we are using var, this is marked as non-configurable.
+var empCount = 43;
+
+// Creates the property adminName on the global scope.
+// Since it was defined without "var", it is marked configurable.
+EmployeeDetails = {
+  name: "xyz",
+  age: 5,
+  designation: "Developer",
+};
+
+// delete can be used to remove properties from objects.
+delete EmployeeDetails.name; // returns true
+
+// Even when the property does not exist, delete returns "true".
+delete EmployeeDetails.salary; // returns true
+
+// EmployeeDetails is a property of the global scope.
+delete EmployeeDetails; // returns true
+
+// On the contrary, empCount is not configurable
+// since var was used.
+delete empCount; // returns false
+
+// delete also does not affect built-in static properties
+// that are non-configurable.
+delete Math.PI; // returns false
+
+function f() {
+  var z = 44;
+
+  // delete doesn't affect local variable names
+  delete z; // returns false
+}
+
+
+14.What are all the types of Pop up boxes available in JavaScript?
+
+-->JavaScript has three kind of popup boxes: Alert box, Confirm box, and Prompt box.
+
+1.alert:-
+
+syntex:alert("hello world")
+
+2.prompt:-
+
+syntex:
+
+var = prompt("hello world")
+
+3.comfirm:-
+
+synetex:-window.confirm("sometext");
+
+example:-
+if (confirm("Press a button!")) {
+  txt = "You pressed OK!";
+} else {
+  txt = "You pressed Cancel!";
+} 
+
+
+
+15.What is the use of Void (0)?
+
+-->“javascript: void(0)” is similar to void. javascript: void(0) means return undefined as a primitive value. We use this to prevent any negative effects on a webpage when we insert some expression. For example, in the case of URL hyperlinks.
+
+
+16.How can a page be forced to load another page in JavaScript?
+
+-->Approach: We can use window. location property inside the script tag to forcefully load another page in Javascript. It is a reference to a Location object that is it represents the current location of the document. We can change the URL of a window by accessing it.
+
+17.What are the disadvantages of using innerHTML in JavaScript?
+
+-->Disadvantages of innerHTML
+
+    Event handlers attached to any DOM element are preserved.
+    Replacement is done everywhere.
+    It is not possible to append innerHTML.
+    Breaks the document.
+    Used for Cross-site Scripting.
+
