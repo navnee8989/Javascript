@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show/Hide Password Example</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- 1.write a program show and hide password -->
+    <!-- <h1>1.write a program show and hide password</h1>
+	<label for="password">Password:</label>
+	<input type="password" id="password" name="password">
+	<button type="button" onclick="showPassword()">Show/Hide</button>
+	
+    
+    <script>
+		function showPassword() {
+			var password = document.getElementById("password");
+			if (password.type === "password") {
+				password.type = "text";
+			} else {
+				password.type = "password";
+			}
+		}
+	</script> -->
+
+    <!-- <h2>Create a program that will select all the classes and loop over and whenever i click the
+        button the alert should show</h2>
+
+        <p class="my-class">Element 1</p>
+	<p class="my-class">Element 2</p>
+	<p class="my-class">Element 3</p>
+	<button type="button" onclick="loopClasses()">Click me!</button>
+
+    <script type="text/javascript">
+		function loopClasses() {
+			var elements = document.getElementsByClassName("my-class");
+			for (var i = 0; i < elements.length; i++) {
+				alert("Element #" + (i + 1) + " has class 'my-class'");
+			}
+		}
+	</script> -->
+
+
+
+    <!-- <h3>Create a responsive header using proper JavaScript</h3>
+    <header>
+        <div class="conteiner row">
+            <div class="col-20 logo">
+                Hotel <span>Lucxury</span>
+            </div>
+            <div class="col-60 links" id="links">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contect us</a></li>
+                    <li><a href="#">Promo</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+            <div class="col-20">
+                <button onclick="menu()">Menu</button>
+            </div>
+        </div>
+    </header>
+
+
+    <script>
+      function menu() {
+        let menu = document.getElementById('links')
+        console.log(menu);
+
+        if (menu.style.display == "none") {
+         menu.style.display = "block"         
+        } else {
+            menu.style.display = "flex"
+        }
+        menu.dblclick = function(){
+                    menu.style.display = "none"
+        }
+
+      }
+    </script> -->
+
+
+    <!-- <h3>Create a form and validate using javascript</h3>
+    <!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validation Example</title>
+
+		
+<link rel="stylesheet" href="./style.css">
+	
+</head>
+<body>
+	<form name="myForm" onsubmit="return validateForm()">
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name">
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email">
+
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password">
+
+		<button type="submit">Submit</button>
+
+		<div id="error"></div>
+	</form>
+
+
+    <script type="text/javascript">
+		function validateForm() {
+			var name = document.forms["myForm"]["name"].value;
+			var email = document.forms["myForm"]["email"].value;
+			var password = document.forms["myForm"]["password"].value;
+			var error = document.getElementById("error");
+
+			error.innerHTML = "";
+
+			if (name == "") {
+				error.innerHTML += "Name is required<br>";
+			}
+
+			if (email == "") {
+				error.innerHTML += "Email is required<br>";
+			} else if (!/\S+@\S+\.\S+/.test(email)) {
+				error.innerHTML += "Email is invalid<br>";
+			}
+
+			if (password == "") {
+				error.innerHTML += "Password is required<br>";
+			} else if (password.length < 8) {
+				error.innerHTML += "Password must be at least 8 characters long<br>";
+			}
+
+			return error.innerHTML == "";
+		}
+	</script> -->
+
+
+
+    <!-- <h3>Create a modal box using css and Js with three buttons</h3>
+
+
+    <!DOCTYPE html>
+<html>
+<head>
+	<title>Modal Box Example</title>
+	
+    <link rel="stylesheet" href="./style.css">
+	
+</head>
+<body>
+	<h2>Modal Box Example</h2>
+
+
+	<button id="myBtn1">Button 1</button>
+	<button id="myBtn2">Button 2</button>
+	<button id="myBtn3">Button 3</button>
+
+	
+	<div id="myModal" class="modal">
+
+	
+	  <div class="modal-content">
+	    <span class="close">&times;</span>
+	    <p>Modal content goes here.</p>
+	  </div>
+
+	</div>
+
+
+    <script type="text/javascript">
+		
+		var modal = document.getElementById("myModal");
+
+	
+		var btn1 = document.getElementById("myBtn1");
+		var btn2 = document.getElementById("myBtn2");
+		var btn3 = document.getElementById("myBtn3");
+
+		var span = document.getElementsByClassName("close")[0];
+
+		
+		btn1.onclick = function() {
+			modal.style.display = "block";
+		}
+
+		btn2.onclick = function() {
+			modal.style.display = "block";
+		}
+
+		btn3.onclick = function() {
+			modal.style.display = "block";
+		}
+
+	
+		span.onclick = function() {
+			modal.style.display = "none";
+		}
+
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	</script> -->
+
+<!-- 
+
+    <h3>Use external js library to show slider</h3>
+    <div class="slider-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">Slide 1</div>
+			<div class="swiper-slide">Slide 2</div>
+			<div class="swiper-slide">Slide 3</div>
+			<div class="swiper-slide">Slide 4</div>
+			<div class="swiper-slide">Slide 5</div>
+		</div>
+		<div class="swiper-pagination"></div>
+	</div>
+
+    <script type="text/javascript" src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script type="text/javascript">
+		var mySwiper = new Swiper('.slider-container', {
+			loop: true,
+			slidesPerView: 3,
+			spaceBetween: 30,
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			breakpoints: {
+				1024: {
+					slidesPerView: 3,
+					spaceBetween: 30,
+				},
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				640: {
+					slidesPerView: 1,
+					spaceBetween: 10,
+				},
+				320: {
+					slidesPerView: 1,
+					spaceBetween: 5,
+				}
+			}
+		});
+	</script> -->
+
+
+    <h3>7.Prevent the browser when i click the form submit button</h3>
+    html
+
+<form>
+  <!-- form fields here -->
+  <button id="submit-btn">Submit</button>
+</form>
+
+<script>
+  const form = document.querySelector('form');
+  const submitBtn = document.querySelector('#submit-btn');
+
+  submitBtn.addEventListener('click', (event) => {
+    event.preventDefault(); // prevent form submission
+    // perform any additional actions here
+  });
+</script>
+
+
+</body>
+</html>
