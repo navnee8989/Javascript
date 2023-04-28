@@ -1,1 +1,136 @@
+							Module-4
+
+1.What is JSON?
+
+==>JSON (JavaScript Object Notation) is a lightweight data interchange format that is easy for humans to read and write and easy for machines to parse and generate. It is based on a subset of the JavaScript programming language and is often used to transmit data between a web server and a web application as an alternative to XML.
+
+JSON consists of key-value pairs where keys are always strings and values can be strings, numbers, arrays, objects, Booleans, or null. The data is structured in a way that is easy to understand and can be easily parsed and manipulated by programming languages such as JavaScript, Python, and many others.
+
+==>{
+  "name": "John Smith",
+  "age": 30,
+  "address": {
+    "street": "123 Main St",
+    "city": "Anytown",
+    "state": "CA",
+    "zip": "12345"
+  },
+  "phoneNumbers": [
+    "555-1234",
+    "555-5678"
+  ]
+}
+
+
+
+2.What is Promises?
+
+==>Promises were introduced in ECMAScript 6 (ES6) to make it easier to handle asynchronous code and avoid "callback hell" - a situation where code becomes difficult to read and maintain due to nested callbacks.
+
+A Promise has three possible states:
+
+    Pending: The initial state. The Promise is neither fulfilled nor rejected.
+    Fulfilled: The operation completed successfully, and the Promise has a resulting value.
+    Rejected: The operation failed, and the Promise has a reason for the failure.
+
+A Promise can be created using the Promise constructor. The constructor takes a function that receives two parameters: resolve and reject. resolve is a function that should be called when the asynchronous operation completes successfully, passing the resulting value as an argument. reject is a function that should be called if the operation fails, passing an error object as an argument.
+
+Once a Promise is created, you can attach callbacks to it using the then method. The then method takes two functions as arguments: the first one is called if the Promise is fulfilled, and the second one is called if the Promise is rejected.
+
+Promises also have other methods, such as catch (to handle rejected Promises), finally (to execute code regardless of whether the Promise was fulfilled or rejected), and all (to execute multiple Promises in parallel and wait for all of them to be fulfilled).
+
+
+4.Write a program of promises and handle that promises also?
+
+
+==>function fetchData(url) {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.onload = () => {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        resolve(xhr.responseText);
+      } else {
+        reject(new Error(xhr.statusText));
+      }
+    };
+    xhr.onerror = () => {
+      reject(new Error('Network Error'));
+    };
+    xhr.send();
+  });
+}
+
+fetchData('https://jsonplaceholder.typicode.com/posts/1')
+  .then((response) => {
+    console.log(JSON.parse(response));
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
+In this program, we define a fetchData function that takes a URL and returns a Promise. The Promise wraps an XHR request to the URL. If the request is successful, the Promise is resolved with the response text. If the request fails, the Promise is rejected with an error object.
+
+We then call fetchData with a URL and use the then method to handle the resolved Promise. The then method takes a function that is called with the resolved value (in this case, the response text). We use JSON.parse to parse the response text into a JavaScript object and log it to the console.
+
+If the Promise is rejected, we use the catch method to handle the error. The catch method takes a function that is called with the error object. We log the error to the console.
+
+This program demonstrates how to use Promises to handle asynchronous operations and how to handle errors using the catch method.
+
+
+5.Use fetch method for calling an api https://fakestoreapi.com/products
+
+==>fetch('https://fakestoreapi.com/products')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+
+In this program, we use the fetch method to make a GET request to the URL https://fakestoreapi.com/products. The fetch method returns a Promise that resolves with a Response object.
+
+We use the then method to handle the resolved Promise. The first then method parses the response as JSON using the json method of the Response object. This method also returns a Promise that resolves with the parsed JSON data.
+
+The second then method is called with the parsed JSON data as its argument. In this case, we simply log the data to the console.
+
+If the Promise is rejected, we use the catch method to handle the error. The catch method takes a function that is called with the error object. We log the error to the console.
+
+This program demonstrates how to use the fetch method to make API calls and handle the response data using Promises.
+
+
+7.Display all the product from the api in your HTML page
+
+==><!DOCTYPE html>
+<html>
+  <head>
+    <title>Products</title>
+  </head>
+  <body>
+    <h1>Products</h1>
+    <ul id="products-list"></ul>
+
+    <script>
+      const productsList = document.getElementById('products-list');
+
+      fetch('https://fakestoreapi.com/products')
+        .then(response => response.json())
+        .then(data => {
+          data.forEach(product => {
+            const li = document.createElement('li');
+            const img = document.createElement('img');
+            const h2 = document.createElement('h2');
+            const p = document.createElement('p');
+
+            img.src = product.image;
+            h2.textContent = product.title;
+            p.textContent = `Price: $${product.price}`;
+
+            li.appendChild(img);
+            li.appendChild(h2);
+            li.appendChild(p);
+            productsList.appendChild(li);
+          });
+        })
+        .catch(error => console.error(error));
+    </script>
+  </body>
+</html>
 
