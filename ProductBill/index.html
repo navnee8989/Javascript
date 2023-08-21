@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Bill</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../dist/output.css"> -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <h1 class="text-red-800 text-center">Product Bill Using JavaScript</h1>
+  <table>
+    <tr>
+      <td>Product info</td>
+      <td>Quantity</td>
+      <td>Price</td>
+      <td>Price (Subtotal)</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Product 1</td>
+      <td>
+        <input type="number" onchange="calculateProduct1()" id="input-1" />
+      </td>
+      <td>$29.99</td>
+      <td id="subtotal-1"></td>
+      <td>
+       
+        <button type="button" id="Remove1" onclick={remove1()} class="btn btn-danger" ">
+          Remove
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>Product 2</td>
+      <td>
+        <input type="number" onchange="calculateProduct2()" id="input-2" />
+      </td>
+      <td>$12.99</td>
+      <td id="subtotal-2"></td>
+      <td>
+        <button type="button" class="btn btn-danger bg-gray-600" onclick={remove2()}>
+          Remove
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td id="fulltotal">Total</td>
+      <td></td>
+    </tr>
+  </table>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script>
+    function calculateProduct1() {
+      var product1Quantity = parseFloat(document.getElementById("input-1").value);
+      var subtotal1 = product1Quantity * 29.99;
+      document.getElementById("subtotal-1").textContent = subtotal1.toFixed(2);
+      calculateTotal();
+
+    }
+
+    function calculateProduct2() {
+      var product2Quantity = parseFloat(document.getElementById("input-2").value);
+      var subtotal2 = product2Quantity * 12.99;
+      document.getElementById("subtotal-2").textContent = subtotal2.toFixed(2);
+      calculateTotal();
+    }
+
+    function calculateTotal() {
+      var subtotal1 = parseFloat(document.getElementById("subtotal-1").textContent);
+      var subtotal2 = parseFloat(document.getElementById("subtotal-2").textContent);
+      var fullTotal = subtotal1 + subtotal2;
+      document.getElementById("fulltotal").textContent = "Total: $" + fullTotal.toFixed(2);
+    }
+    function remove1(){
+     document.getElementById("input-1").value = 0;
+     document.getElementById("subtotal-1").textContent = null;
+    }
+    function remove2(){
+     document.getElementById("input-2").value = 0;
+     document.getElementById("subtotal-2").textContent = null;
+    }
+  </script>
+</body>
+</html>
