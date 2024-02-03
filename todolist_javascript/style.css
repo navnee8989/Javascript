@@ -1,0 +1,27 @@
+.design{
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+.inside-div{
+    display: inline;
+    margin: 5px;
+    color: white;
+}
+.box div{
+    background-color: aliceblue;
+    width: 100px;
+    text-align: center;
+    color: black;
+}
+.box span{
+    background-color: rgb(16, 121, 213);
+    width: 100px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    color: rgb(240, 240, 240);
+}

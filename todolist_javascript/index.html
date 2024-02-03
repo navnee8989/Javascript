@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+			crossorigin="anonymous" />
+            <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+            <link rel="stylesheet" href="./style.css">
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+			<!-- Container wrapper -->
+			<div class="container-fluid">
+				<!-- Toggle button -->
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-mdb-toggle="collapse"
+					data-mdb-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation">
+					<i class="fas fa-bars"></i>
+				</button>
+
+				<!-- Collapsible wrapper -->
+				<div
+					class="collapse navbar-collapse d-flex justify-content-between"
+					id="navbarSupportedContent">
+					<!-- Navbar brand -->
+					<a
+						class="navbar-brand mt-2 mt-lg-0"
+						href="#">
+						<img
+							src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+							height="15"
+							alt="MDB Logo"
+							loading="lazy" />
+					</a>
+					<!-- Left links -->
+					<ul class="navbar-nav me-2 mb-2 mb-lg-2 ">
+						<!-- Changed class here -->
+						<li class="nav-item">
+							<a
+								class="nav-link text-white
+								href="#"
+								>Dashboard</a
+							>
+						</li>
+						<li class="nav-item ">
+							<a
+								class="nav-link text-white"
+								href="#"
+								>Team</a
+							>
+						</li>
+						<li class="nav-item">
+							<a
+								class="nav-link text-white
+								href="#"
+								>Projects</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+        <div class="container-fluid bg-dark  " >
+            <div class="form-page  w-25 m-0 m-auto pb-16">
+                    <h1 class="text-white text-xl text-center py-5 font-bold hover:text-blue-400">Add Your Item </h1>
+                <form id="form">
+                    <div class="form-group d-flex">
+                     
+                      <input type="text" id="food"  class="form-control text-center font-bold" placeholder="Your Fevorite Food...."  onchange="handleChange()">
+                     <button type="submit" class="btn btn-danger text-center p-2 w-25" id="add" >Add</button>
+                    </div>
+                </form>
+            </div>
+            <div class="box d-flex justify-content-center item-align-center">
+                <div class="inside-div">
+					
+				</div>
+            </div>
+        </div>
+	</body>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+	<script src="./main.js"></script>
+</html>

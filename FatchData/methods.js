@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                 duration: 3000,
                 newWindow: true,
                 close: true,
-                gravity: "top", // top, bottom, left, right
-                position: "center", // center, left, right
+                gravity: "top",
+                position: "center", 
                 stopOnFocus: true,
             }).showToast();
         } catch (error) {
