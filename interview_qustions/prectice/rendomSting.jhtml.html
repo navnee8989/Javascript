@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1
+			class=""
+			id="teg"
+			style="text-align: center; font-size: 20px"></h1>
+	</body>
+	<script>
+
+
+		    const string ='abcdefghijklmnopqrtsuxyz'
+
+            const stringLength = 7
+            let dispaytext = ''
+
+            for(let i =0; i < stringLength; i++){
+                var num = Math.floor(Math.random() * string.length)
+				dispaytext += string.charAt(num)
+            }
+			const display = document.getElementById('teg')
+			display.innerHTML = dispaytext
+	</script>
+</html>
